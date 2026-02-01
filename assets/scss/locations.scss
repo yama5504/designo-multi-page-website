@@ -1,0 +1,122 @@
+/* ---------------
+locations
+--------------- */
+.locations {
+    margin-bottom: 32vw;
+
+    .location {
+        margin-bottom: 10.67vw;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+
+        .back-common {
+            justify-content: center;
+
+            .text-wrap {
+                h2 {
+                    font-weight: 500;
+                }
+                p  span{
+                    font-weight: 700;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width:768px) {
+    .locations {
+        margin-bottom: 15.63vw;
+        padding: 0 5.21vw;
+
+        .location {
+            margin-bottom: 15.63vw;
+
+            img {
+                border-radius: 1.95vw;
+                margin-bottom: 3.91vw;
+            }
+
+            .back-common {
+                border-radius: 1.95vw;
+                justify-content: left;
+                padding: 11.46vw 9.76vw;
+
+                &.beige::before {
+                    width: 76.04vw;
+                    height: 76.04vw;
+                    top: auto;
+                    bottom: 0;
+                    left: 0;
+                }
+
+                .text-wrap {
+                    h2 {
+                        text-align: left;
+                    }
+
+                    .info {
+                        display: flex;
+                        gap: 3.91vw;
+
+                        p {
+                            text-align: left;
+                            min-width: 33.20vw;
+                            margin-top: 3.13vw;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width:1440px) {
+    .locations {
+        margin-bottom: 160px;
+        padding: 0;
+
+        .location {
+            margin-bottom: 32px;
+            display: flex;
+            justify-content: space-between;
+            gap: 30px;
+
+            &:nth-child(odd) {
+                flex-direction: row-reverse;
+            }
+
+            img {
+                border-radius: 15px;
+                margin-bottom: 0;
+                width: 350px;
+                height: 326px;
+                object-fit: cover;
+            }
+
+            .back-common {
+                border-radius: 15px;
+                padding: 0 95px;
+
+                &.beige::before {
+                    background-image: url(../images/shared/desktop/bg-pattern-two-circles.svg);
+                    width: 584px;
+                    height: 292px;
+                }
+
+                .text-wrap {
+                    .info {
+                        gap: 30px;
+
+                        p {
+                            min-width: 255px;
+                            margin-top: 24px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
