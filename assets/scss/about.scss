@@ -1,0 +1,54 @@
+/* ---------------
+about
+--------------- */
+.deal {
+    margin-bottom: 32vw;
+}
+
+@media screen and (min-width:768px) {
+    .about-us, .talent, .deal {
+        margin: 0 5.21vw 15.63vw;
+        border-radius: 1.96vw;
+        overflow: hidden;
+    }
+}
+
+@media screen and (min-width:1440px) {
+    .about-us, .talent, .deal {
+        display: flex;
+        border-radius: 15px;
+        margin: 0 0 160px;
+
+        img {
+            height: 100%;
+            width: auto;
+        }
+    }
+
+    .about-us, .deal {
+        flex-direction: row-reverse;
+    }
+
+    .deal .back-common.beige::before {
+        left: 0;
+    }
+
+    div.leaf {
+        position: relative;
+
+        &::after {
+            top: -320px;
+            left: -165px;
+        }
+    }
+
+    .location-links.leaf {
+        position: relative;
+
+        &::after {
+            top: 182px;
+            right: -165px;
+            transform: rotate(180deg);
+        }
+    }
+}

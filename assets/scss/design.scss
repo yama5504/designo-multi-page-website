@@ -1,0 +1,54 @@
+/* ---------------
+web-design
+--------------- */
+.design {
+    .design-mv {
+        margin-bottom: 25.6vw;
+    }
+
+    .achievements {
+        margin-bottom: 25.6vw;
+    }
+
+    .projects {
+        margin-bottom: 25.6vw;
+    }
+}
+
+@media screen and (min-width:768px) {
+    .design {
+        .design-mv {
+            margin-bottom: 15.63vw;
+        }
+
+        .achievements {
+            margin-bottom: 15.63vw;
+        }
+
+        .projects {
+            margin-bottom: 15.63vw;
+        }
+    }
+}
+
+@media screen and (min-width:1440px) {
+    .design {
+        .design-mv {
+            margin-bottom: 160px;
+        }
+
+        .achievements {
+            margin-bottom: 160px;
+            position: relative;
+
+            &.leaf::after {
+                top: -286px;
+                left: -165px;
+            }
+        }
+
+        .projects {
+            margin-bottom: 160px;
+        }
+    }
+}
