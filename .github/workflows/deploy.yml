@@ -15,12 +15,13 @@ jobs:
       - name: Deploy via SFTP
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
-          host: ${{ secrets.SFTP_HOST }}
+          # 👇 ここが「server」になっているか確認（host はNG）
+          server: ${{ secrets.SFTP_HOST }}
           username: ${{ secrets.SFTP_USERNAME }}
           password: ${{ secrets.SFTP_PASSWORD }}
           port: 22
-          # 👇【超重要】ローカルの「どのフォルダの中身」をアップロードするか
-          local_dir: ./
-          # 👇【超重要】エックスサーバー側の「サブドメインのテーマフォルダ」への正確な道順
-          # ※「あなたの取得したドメイン名」と「サブドメイン名」の部分を、実際のフォルダ名に書き換えてください！
-          remote_dir: /yamaportfolio.jp/public_html/designo.yamaportfolio.jp/wp-content/themes/designo-theme/
+          # 👇 ここが「local-dir」になっているか確認（アンダーバーではなくハイフン）
+          local-dir: ./
+          # 👇 ここが「server-dir」になっているか確認（remote_dir はNG）
+          # ※あなたのアカウントの実際のパスに書き換えてください！
+          server-dir: /yamaportfolio.jp/public_html/designo.yamaportfolio.jp/wp-content/themes/designo-theme/
