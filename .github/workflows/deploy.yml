@@ -1,0 +1,26 @@
+name: Deploy Theme to Xserver
+
+on:
+  push:
+    branches:
+      - main # mainブランチにPushされたときに起動します
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Deploy via SFTP
+        uses: lpresswood/ftp-upload-action@v1.0.3
+        with:
+          host: ${{ secrets.SFTP_HOST }}
+          username: ${{ secrets.SFTP_USERNAME }}
+          password: ${{ secrets.SFTP_PASSWORD }}
+          port: 22
+          # 👇【超重要】ローカルの「どのフォルダの中身」をアップロードするか
+          local_dir: ./
+          # 👇【超重要】エックスサーバー側の「サブドメインのテーマフォルダ」への正確な道順
+          # ※「あなたの取得したドメイン名」と「サブドメイン名」の部分を、実際のフォルダ名に書き換えてください！
+          remote_dir: /yamaportfolio.jp/public_html/designo.yamaportfolio.jp/wp-content/themes/designo-theme/
