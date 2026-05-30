@@ -15,13 +15,10 @@ jobs:
       - name: Deploy via SFTP
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
-          # 👇 ここが「server」になっているか確認（host はNG）
           server: ${{ secrets.SFTP_HOST }}
           username: ${{ secrets.SFTP_USERNAME }}
           password: ${{ secrets.SFTP_PASSWORD }}
           port: 22
-          # 👇 ここが「local-dir」になっているか確認（アンダーバーではなくハイフン）
+          protocol: sftp
           local-dir: ./
-          # 👇 ここが「server-dir」になっているか確認（remote_dir はNG）
-          # ※あなたのアカウントの実際のパスに書き換えてください！
           server-dir: /yamaportfolio.jp/public_html/designo.yamaportfolio.jp/wp-content/themes/designo-theme/
