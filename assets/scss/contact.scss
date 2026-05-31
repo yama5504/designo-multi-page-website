@@ -1,0 +1,161 @@
+/* ---------------
+contact
+--------------- */
+.contact {
+    .form.back-common {
+        display: block;
+
+        &::before {
+            background-image: url(../images/contact/mobile/bg-pattern-hero-contact-mobile.svg);
+            top: 0;
+            left: -25vw;
+            height: 264vw;
+        }
+
+        .text-wrap {
+            margin-bottom: 12.8vw;
+        }
+
+        .snow-monkey-form {
+            .smf-text-control__control, .smf-textarea-control__control {
+                all: unset;
+                box-sizing: border-box;
+                width: 100%;
+                border-bottom: 1px solid #fff;
+                padding: 2.93vw 3.73vw;
+                margin-bottom: 3.73vw;
+                font-size: var(--fs-15px);
+                line-height: 1.73;
+
+                &::placeholder {
+                    color: rgba(255,255,255,0.5);
+                }
+            }
+
+            .smf-textarea-control__control {
+                margin-bottom: 10.67vw;
+            }
+
+            .smf-action {
+                text-align: center;
+
+                .smf-button-control__control {
+                    all: unset;
+                    box-sizing: border-box;
+                    background-color: #fff;
+                    font-size: var(--fs-15px);
+                    line-height: 1.5;
+                    padding: 4.8vw  0;
+                    width: 40.53vw;
+                    font-weight: 500;
+                    border-radius: 2.13vw;
+                    letter-spacing: 0.067em;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width:768px) {
+    .contact {
+        .form.back-common{
+            margin: 0 5.21vw 15.63vw;
+            border-radius: 1.96vw;
+            padding: 9.25vw 7.55vw;
+
+            &::before {
+                background-image: url(../images/contact/desktop/bg-pattern-hero-desktop.svg);
+                top: -4vw;
+                left: -14vw;
+                width: 83.33vw;
+                height: 83.33vw;
+            }
+
+            .text-wrap {
+                margin-bottom: 5.21vw;
+                
+                h1 {
+                    text-align: left;
+                }
+
+                p {
+                    text-align: left;
+                }
+            }
+
+            .snow-monkey-form {
+                .smf-text-control__control, .smf-textarea-control__control {
+                    padding: 1.43vw 3.13vw;
+                    margin-bottom: 1.82vw;
+                }
+
+                .smf-textarea-control__control {
+                    margin-bottom: 3.13vw;
+                }
+
+                .smf-action {
+                    text-align: right;
+
+                    .smf-button-control__control {
+                        text-align: center;
+                        padding: 2.21vw  0;
+                        width: 19.79vw;
+                        border-radius: 1.04vw;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width:1440px) {
+    .contact {
+        .form.back-common{
+            display: flex;
+            justify-content: space-between;
+            margin: 0 0 160px;
+            border-radius: 15px;
+            padding: 55px 95px;
+
+            &::before {
+                top: -107px;
+                left: 0;
+                width: 640px;
+                height: 640px;
+            }
+
+            .text-wrap {
+                margin-bottom: 0;
+                width: 445px;
+            }
+
+            .snow-monkey-form {
+                width: 380px;
+                position: relative;
+                z-index: 1;
+
+                .smf-text-control__control, .smf-textarea-control__control {
+                    padding: 11px 16px;
+                    margin-bottom: 14px;
+                }
+
+                .smf-textarea-control__control {
+                    margin-bottom: 24px;
+                }
+
+                .smf-action {
+                    .smf-button-control__control {
+                        padding: 17px 0;
+                        width: 152px;
+                        border-radius: 8px;
+                    }
+                }
+            }
+        }
+
+        .location-links.leaf::after {
+            top: 80px;
+            transform: rotate(0deg);
+        }
+    }
+}
