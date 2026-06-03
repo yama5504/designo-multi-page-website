@@ -1408,6 +1408,10 @@ contact
 .contact .form.back-common .text-wrap {
   margin-bottom: 12.8vw;
 }
+.contact .form.back-common .snow-monkey-form {
+  position: relative;
+  z-index: 10;
+}
 .contact .form.back-common .snow-monkey-form .smf-text-control__control, .contact .form.back-common .snow-monkey-form .smf-textarea-control__control {
   all: unset;
   box-sizing: border-box;
@@ -1417,6 +1421,7 @@ contact
   margin-bottom: 3.73vw;
   font-size: var(--fs-15px);
   line-height: 1.73;
+  color: #fff;
 }
 .contact .form.back-common .snow-monkey-form .smf-text-control__control::placeholder, .contact .form.back-common .snow-monkey-form .smf-textarea-control__control::placeholder {
   color: rgba(255, 255, 255, 0.5);
