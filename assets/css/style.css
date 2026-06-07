@@ -48,6 +48,11 @@ common
     --fs-48px: 48px;
   }
 }
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 96px;
+}
+
 body {
   font-family: "Jost", sans-serif;
   line-height: 1;
@@ -58,6 +63,9 @@ main {
 }
 
 @media screen and (min-width: 768px) {
+  html {
+    scroll-padding-top: 155px;
+  }
   main {
     margin-top: 155px;
   }
@@ -756,6 +764,9 @@ header.open .header-nav .menu-overlay {
     max-width: 1110px;
     margin: 0 auto;
   }
+  .header-inner .header-nav ul li a:hover {
+    text-decoration: underline;
+  }
 }
 /* ---------------
 footer
@@ -970,6 +981,9 @@ footer .contact-wrap ul li a {
   footer .footer-inner .footer-nav ul {
     gap: 42px;
   }
+  footer .footer-inner .footer-nav ul li a:hover {
+    text-decoration: underline;
+  }
   footer .footer-inner .contact-wrap p.address1 {
     margin-right: 205px;
   }
@@ -978,6 +992,9 @@ footer .contact-wrap ul li a {
   }
   footer .footer-inner .contact-wrap ul li a {
     width: 24px;
+  }
+  footer .footer-inner .contact-wrap ul li a:hover {
+    opacity: 0.8;
   }
 }
 /* ---------------

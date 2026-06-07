@@ -251,6 +251,10 @@ footer {
 
                 ul {
                     gap: 42px;
+
+                    li a:hover {
+                        text-decoration: underline;
+                    }
                 }
             }
 
@@ -266,6 +270,10 @@ footer {
 
                     li  a {
                         width: 24px;
+
+                        &:hover {
+                            opacity: 0.8;
+                        }
                     }
                 }
             }

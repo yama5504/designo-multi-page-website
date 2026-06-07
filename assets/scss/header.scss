@@ -134,5 +134,9 @@ header.open {
     .header-inner {
         max-width: 1110px;
         margin: 0 auto;
+
+        .header-nav ul li a:hover{
+            text-decoration: underline;
+        }
     }
 }

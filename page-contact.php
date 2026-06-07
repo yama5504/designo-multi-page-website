@@ -14,17 +14,17 @@
             <div class="location-link">
                 <div class="illust"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/shared/desktop/illustration-canada.svg" alt=""></div>
                 <h3>CANADA</h3>
-                <a href="" class="cv-btn2">SEE LOCATION</a>
+                <a href="<?php echo esc_url( home_url('/locations/#canada') ); ?>" class="cv-btn2">SEE LOCATION</a>
             </div>
             <div class="location-link">
                 <div class="illust"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/shared/desktop/illustration-australia.svg" alt=""></div>
                 <h3>AUSTRALIA</h3>
-                <a href="" class="cv-btn2">SEE LOCATION</a>
+                <a href="<?php echo esc_url( home_url('/locations/#australia') ); ?>" class="cv-btn2">SEE LOCATION</a>
             </div>
             <div class="location-link">
                 <div class="illust"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/shared/desktop/illustration-united-kingdom.svg" alt=""></div>
                 <h3>UNITED KINGDOM</h3>
-                <a href="" class="cv-btn2">SEE LOCATION</a>
+                <a href="<?php echo esc_url( home_url('/locations/#united-kingdom') ); ?>" class="cv-btn2">SEE LOCATION</a>
             </div>
         </div>
     </section>

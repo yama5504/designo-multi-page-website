@@ -2,7 +2,7 @@
 
 <main>
     <section class="locations">
-        <div class="location">
+        <div id="canada" class="location">
             <picture>
                 <source media="(min-width:768px) and (max-width:1439px)" srcset="<?php echo get_template_directory_uri(); ?>/assets/images/locations/tablet/image-map-canada.png">
                 <img src="<?php echo get_template_directory_uri(); ?>/assets/images/locations/desktop/image-map-canada.png" alt="">
@@ -26,7 +26,7 @@
             </div>
         </div>
 
-        <div class="location">
+        <div id="australia" class="location">
             <picture>
                 <source media="(min-width:768px) and (max-width:1439px)" srcset="<?php echo get_template_directory_uri(); ?>/assets/images/locations/tablet/image-map-australia.png">
                 <img src="<?php echo get_template_directory_uri(); ?>/assets/images/locations/desktop/image-map-australia.png" alt="">
@@ -50,7 +50,7 @@
             </div>
         </div>
 
-        <div class="location">
+        <div id="united-kingdom" class="location">
             <picture>
                 <source media="(min-width:768px) and (max-width:1439px)" srcset="<?php echo get_template_directory_uri(); ?>/assets/images/locations/tablet/image-map-uk.png">
                 <img src="<?php echo get_template_directory_uri(); ?>/assets/images/locations/desktop/image-map-united-kingdom.png" alt="">
