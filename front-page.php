@@ -5,7 +5,7 @@
         <div class="text-wrap">
             <h1>Award-winning custom designs and digital branding solutions</h1>
             <p>With over 10 years in the industry, we are experienced in creating fully responsive websites, app design, and engaging brand experiences. Find out more about our services.</p>
-            <a href="" class="cv-btn">LEARN MORE</a>
+            <a href="<?php echo esc_url( home_url('/about/') ); ?>" class="cv-btn">LEARN MORE</a>
         </div>
         <img src="<?php echo get_template_directory_uri(); ?>/assets/images/home/desktop/image-hero-phone.png" alt="">
     </section>
