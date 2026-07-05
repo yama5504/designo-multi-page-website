@@ -618,6 +618,17 @@ textarea:focus {
 	color: #111;
 }
 
+/* ==========================================================================
+   ブラウザの自動入力（Autofill）対策を追記
+   ========================================================================== */
+input:-internal-autofill-selected,
+input:-webkit-autofill,
+textarea:-webkit-autofill {
+    -webkit-text-fill-color: #fff !important;
+    box-shadow: 0 0 0px 1000px transparent inset !important;
+    transition: background-color 5000000s ease-in-out 0s !important;
+}
+
 select {
 	border: 1px solid #ccc;
 }
