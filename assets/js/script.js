@@ -12,3 +12,13 @@ document.addEventListener('DOMContentLoaded', () => {
         header.classList.remove('open');
     });
 });
+
+
+document.addEventListener('DOMContentLoaded', () => {
+    const textarea = document.querySelector('.smf-textarea-control__control');
+    
+    if (textarea) {
+        textarea.setAttribute('required', 'required');
+        textarea.setAttribute('minlength', '1');
+    }
+});
