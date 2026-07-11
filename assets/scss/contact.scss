@@ -25,6 +25,7 @@ contact
 
                 .smf-error-messages {
                     color: #fff;
+                    font-weight: 400;
                     font-size: var(--fs-12px);
                     position: absolute;
                     top: 3vw;
@@ -56,6 +57,7 @@ contact
                 font-size: var(--fs-15px);
                 line-height: 1.73;
                 color: #fff;
+                font-weight: 400;
 
                 &::placeholder {
                     color: rgba(255,255,255,0.5);
