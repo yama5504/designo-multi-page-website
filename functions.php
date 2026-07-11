@@ -93,3 +93,18 @@ function designo_theme_scripts() {
 	}
 }
 add_action( 'wp_enqueue_scripts', 'designo_theme_scripts' );
+
+
+// Snow Monkey Forms のエラーメッセージをカスタマイズ
+add_filter(
+    'snow_monkey_forms/validator/error_message',
+    function( $message, $rule, $name ) {
+        if ( 'required' === $rule ) {
+            return 'Can’t be empty';
+        }
+        
+        return $message;
+    },
+    10,
+    3
+);

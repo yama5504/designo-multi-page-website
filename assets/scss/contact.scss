@@ -20,6 +20,32 @@ contact
             position: relative;
             z-index: 10;
 
+            .smf-item {
+                position: relative;
+
+                .smf-error-messages {
+                    color: #fff;
+                    font-size: var(--fs-12px);
+                    position: absolute;
+                    top: 3vw;
+                    right: 0;
+                    transform: translateY(-50%);
+
+                    &::after {
+                        content: "";
+                        display: inline-block;
+                        background-image: url(../images/contact/desktop/icon-error.svg);
+                        background-repeat: no-repeat;
+                        background-size: cover;
+                        width: 5.33vw;
+                        height: 5.33vw;
+                        position: relative;
+                        top: 1.5vw;
+                        right: -0.5vw;
+                    }
+                }
+            }
+
             .smf-text-control__control, .smf-textarea-control__control {
                 all: unset;
                 box-sizing: border-box;
@@ -33,6 +59,11 @@ contact
 
                 &::placeholder {
                     color: rgba(255,255,255,0.5);
+                }
+
+                &:not(:placeholder-shown) {
+                    font-weight: 500;
+                    border-bottom: 3px solid #fff;
                 }
             }
 
@@ -88,6 +119,19 @@ contact
             }
 
             .snow-monkey-form {
+                .smf-item {
+                    .smf-error-messages {
+                        top: 1.8vw;
+
+                        &::after {
+                            width: 2.21vw;
+                            height: 2.21vw;
+                            top: 0.5vw;
+                            right: -0.2vw;
+                        }
+                    }
+                }
+
                 .smf-text-control__control, .smf-textarea-control__control {
                     padding: 1.43vw 3.13vw;
                     margin-bottom: 1.82vw;
@@ -137,6 +181,19 @@ contact
                 width: 380px;
                 position: relative;
                 z-index: 1;
+
+                .smf-item {
+                    .smf-error-messages {
+                        top: 10px;
+
+                        &::after {
+                            width: 20px;
+                            height: 20px;
+                            top: 5px;
+                            right: 0;
+                        }
+                    }
+                }
 
                 .smf-text-control__control, .smf-textarea-control__control {
                     padding: 11px 16px;

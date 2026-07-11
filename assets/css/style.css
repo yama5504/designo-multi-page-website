@@ -11,6 +11,7 @@ common
   --light-grey: #F1F3F5;
   --black: #1D1C1E;
   /* サイズ */
+  --fs-12px: 3.2vw;
   --fs-14px: 3.73vw;
   --fs-15px: 4vw;
   --fs-16px: 4.27vw;
@@ -24,6 +25,7 @@ common
 
 @media screen and (min-width: 768px) {
   :root {
+    --fs-12px: 1.56vw;
     --fs-14px: 1.82vw;
     --fs-15px: 1.95vw;
     --fs-16px: 2.08vw;
@@ -37,6 +39,7 @@ common
 }
 @media screen and (min-width: 1440px) {
   :root {
+    --fs-12px: 12px;
     --fs-14px: 14px;
     --fs-15px: 15px;
     --fs-16px: 16px;
@@ -1429,6 +1432,29 @@ contact
   position: relative;
   z-index: 10;
 }
+.contact .form.back-common .snow-monkey-form .smf-item {
+  position: relative;
+}
+.contact .form.back-common .snow-monkey-form .smf-item .smf-error-messages {
+  color: #fff;
+  font-size: var(--fs-12px);
+  position: absolute;
+  top: 3vw;
+  right: 0;
+  transform: translateY(-50%);
+}
+.contact .form.back-common .snow-monkey-form .smf-item .smf-error-messages::after {
+  content: "";
+  display: inline-block;
+  background-image: url(../images/contact/desktop/icon-error.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 5.33vw;
+  height: 5.33vw;
+  position: relative;
+  top: 1.5vw;
+  right: -0.5vw;
+}
 .contact .form.back-common .snow-monkey-form .smf-text-control__control, .contact .form.back-common .snow-monkey-form .smf-textarea-control__control {
   all: unset;
   box-sizing: border-box;
@@ -1442,6 +1468,10 @@ contact
 }
 .contact .form.back-common .snow-monkey-form .smf-text-control__control::placeholder, .contact .form.back-common .snow-monkey-form .smf-textarea-control__control::placeholder {
   color: rgba(255, 255, 255, 0.5);
+}
+.contact .form.back-common .snow-monkey-form .smf-text-control__control:not(:placeholder-shown), .contact .form.back-common .snow-monkey-form .smf-textarea-control__control:not(:placeholder-shown) {
+  font-weight: 500;
+  border-bottom: 3px solid #fff;
 }
 .contact .form.back-common .snow-monkey-form .smf-textarea-control__control {
   margin-bottom: 10.67vw;
@@ -1484,6 +1514,15 @@ contact
   .contact .form.back-common .text-wrap p {
     text-align: left;
   }
+  .contact .form.back-common .snow-monkey-form .smf-item .smf-error-messages {
+    top: 1.8vw;
+  }
+  .contact .form.back-common .snow-monkey-form .smf-item .smf-error-messages::after {
+    width: 2.21vw;
+    height: 2.21vw;
+    top: 0.5vw;
+    right: -0.2vw;
+  }
   .contact .form.back-common .snow-monkey-form .smf-text-control__control, .contact .form.back-common .snow-monkey-form .smf-textarea-control__control {
     padding: 1.43vw 3.13vw;
     margin-bottom: 1.82vw;
@@ -1523,6 +1562,15 @@ contact
     width: 380px;
     position: relative;
     z-index: 1;
+  }
+  .contact .form.back-common .snow-monkey-form .smf-item .smf-error-messages {
+    top: 10px;
+  }
+  .contact .form.back-common .snow-monkey-form .smf-item .smf-error-messages::after {
+    width: 20px;
+    height: 20px;
+    top: 5px;
+    right: 0;
   }
   .contact .form.back-common .snow-monkey-form .smf-text-control__control, .contact .form.back-common .snow-monkey-form .smf-textarea-control__control {
     padding: 11px 16px;

@@ -10,6 +10,7 @@ common
     --light-grey: #F1F3F5;
     --black: #1D1C1E;
     /* サイズ */
+    --fs-12px: 3.2vw;
     --fs-14px: 3.73vw;
     --fs-15px: 4vw;
     --fs-16px: 4.27vw;
@@ -23,6 +24,7 @@ common
 
 @media screen and (min-width:768px) {
     :root {
+        --fs-12px: 1.56vw;
         --fs-14px: 1.82vw;
         --fs-15px: 1.95vw;
         --fs-16px: 2.08vw;
@@ -37,6 +39,7 @@ common
 
 @media screen and (min-width:1440px) {
     :root {
+        --fs-12px: 12px;
         --fs-14px: 14px;
         --fs-15px: 15px;
         --fs-16px: 16px;
@@ -779,7 +782,6 @@ a {
         }
     }
 }
-
 
 @media screen and (min-width:1440px) {
     .leaf::after {
