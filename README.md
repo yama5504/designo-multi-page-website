@@ -1,70 +1,123 @@
-[![Build Status](https://travis-ci.org/Automattic/_s.svg?branch=master)](https://travis-ci.org/Automattic/_s)
+# Designo Custom Theme（マルチページ・カスタムテーマ構築実績）
 
-_s
-===
+実務を想定した大規模なデザインカンプ（複数画面・複雑なページレイアウト）をもとに、WordPressの完全独自（カスタム）テーマとして設計・実装したWebアプリケーションの開発実績です。
+単なる外観のトレースや既存テーマのカスタマイズにとどまらず、WordPressのテンプレート階層に則った堅牢なコンポーネント設計、BEM思想に基づくSassモジュール化、実務運用を見据えたアセット最適化など、「保守性の高さ」と「運用のしやすさ」をトータルで追求して構築しました。
 
-Hi. I'm a starter theme called `_s`, or `underscores`, if you like. I'm a theme meant for hacking so don't use me as a Parent Theme. Instead try turning me into the next, most awesome, WordPress theme out there. That's what I'm here for.
+## 目次
 
-My ultra-minimal CSS might make me look like theme tartare but that means less stuff to get in your way when you're designing your awesome theme. Here are some of the other more interesting things you'll find here:
+- [概要](#概要)
+  - [要件・機能](#要件機能)
+  - [ライブサイト・コード](#ライブサイトコード)
+- [開発プロセス](#開発プロセス)
+  - [ディレクトリ構造](#ディレクトリ構造)
+  - [使用技術・環境](#使用技術環境)
+  - [こだわった技術的アプローチ](#こだわった技術的アプローチ)
+    - [1. テンプレート階層の厳格な準拠とコンポーネントのモジュール化](#1-テンプレート階層の厳格な準拠とコンポーネントのモジュール化)
+    - [2. filemtime() を活用したブラウザネイティブなキャッシュバスター環境](#2-filemtime-を活用したブラウザネイティブなキャッシュバスター環境)
+    - [3. @use 規則に準拠した Sass モジュール設計（関心の分離）](#3-use-規則に準拠した-sass-モジュール設計関心の分離)
+    - [4. Vanilla JS によるドロワーメニューの軽量化とメモリ最適化](#4-vanilla-js-によるドロワーメニューの軽量化とメモリ最適化)
+    - [5. 流体フォントサイズ（vw）と picture 要素によるシームレスなレスポンシブデザイン](#5-流体フォントサイズvwと-picture-要素によるシームレスなレスポンシブデザイン)
+    - [6. 実務プラグイン（Snow Monkey Form）のスタイルプリセット対応](#6-実務プラグインsnow-monkey-formのスタイルプリセット対応)
+  - [今後の拡張計画](#今後の拡張計画)
+- [制作者](#制作者)
 
-* A modern workflow with a pre-made command-line interface to turn your project into a more pleasant experience.
-* A just right amount of lean, well-commented, modern, HTML5 templates.
-* A custom header implementation in `inc/custom-header.php`. Just add the code snippet found in the comments of `inc/custom-header.php` to your `header.php` template.
-* Custom template tags in `inc/template-tags.php` that keep your templates clean and neat and prevent code duplication.
-* Some small tweaks in `inc/template-functions.php` that can improve your theming experience.
-* A script at `js/navigation.js` that makes your menu a toggled dropdown on small screens (like your phone), ready for CSS artistry. It's enqueued in `functions.php`.
-* 2 sample layouts in `sass/layouts/` made using CSS Grid for a sidebar on either side of your content. Just uncomment the layout of your choice in `sass/style.scss`.
-Note: `.no-sidebar` styles are automatically loaded.
-* Smartly organized starter CSS in `style.css` that will help you to quickly get your design off the ground.
-* Full support for `WooCommerce plugin` integration with hooks in `inc/woocommerce.php`, styling override woocommerce.css with product gallery features (zoom, swipe, lightbox) enabled.
-* Licensed under GPLv2 or later. :) Use it to make something cool.
+## 概要
 
-Installation
----------------
+### 要件・機能
 
-### Requirements
+全7画面（トップ、About、App Design、Web Design、Graphic Design、Locations、Contact）にわたる複雑なグリッドレイアウトや有機的な装飾（背景のリーフパターン等）を含むデザインをドット単位で忠実にトレース。さらに、以下の高度なテーマ機能を実装しました：
 
-`_s` requires the following dependencies:
+- **マルチページ（MPA）ナビゲーション & フルレスポンシブ設計:** スマホ・タブレット・PCの全環境でデザインが滑らかに追従。
+- **動的アセット管理:** `functions.php` をコアとしたアセット読み込み制御とWordPress標準機能（`title-tag`, `html5`）の全般サポート。
+- **実務に耐えうる拡張性:** 今後のプラグイン導入や固定ページ増設時に、既存コードに悪影響を与えない高度なカプセル化。
 
-- [Node.js](https://nodejs.org/)
-- [Composer](https://getcomposer.org/)
+### ライブサイト・コード
 
-### Quick Start
+- テーマコード（GitHub）: [GitHubリポジトリへのURL]
 
-Clone or download this repository, change its name to something else (like, say, `megatherium-is-awesome`), and then you'll need to do a six-step find and replace on the name in all the templates.
+---
 
-1. Search for `'_s'` (inside single quotations) to capture the text domain and replace with: `'megatherium-is-awesome'`.
-2. Search for `_s_` to capture all the functions names and replace with: `megatherium_is_awesome_`.
-3. Search for `Text Domain: _s` in `style.css` and replace with: `Text Domain: megatherium-is-awesome`.
-4. Search for <code>&nbsp;_s</code> (with a space before it) to capture DocBlocks and replace with: <code>&nbsp;Megatherium_is_Awesome</code>.
-5. Search for `_s-` to capture prefixed handles and replace with: `megatherium-is-awesome-`.
-6. Search for `_S_` (in uppercase) to capture constants and replace with: `MEGATHERIUM_IS_AWESOME_`.
+## 開発プロセス
 
-Then, update the stylesheet header in `style.css`, the links in `footer.php` with your own information and rename `_s.pot` from `languages` folder to use the theme's slug. Next, update or delete this readme.
+### ディレクトリ構造
 
-### Setup
+WordPressの標準コーディング規格およびVite/Sass等のローカルビルド環境に則り、ソースコード側は「機能・役割ごとのモジュール（JS/SCSS）」に細かく分離。コンパイル後の成果物を `assets/` に集約し、テンプレート側から動的に読み込むクリーンでスケールしやすいディレクトリ構造を設計しています。
 
-To start using all the tools that come with `_s`  you need to install the necessary Node.js and Composer dependencies :
-
-```sh
-$ composer install
-$ npm install
+```text
+designo-theme/
+├── assets/                  # コンパイル済みアセット・静的ファイル
+│   ├── css/
+│   │   └── style.css        # コンパイル後のメインCSS
+│   ├── js/
+│   │   └── script.js        # メインJavaScript（ドロワーメニュー等の制御）
+│   └── images/              # 各種画像・SVGアセット（デバイス毎に最適化）
+│
+├── src/                     # ソースコード開発ディレクトリ
+│   └── scss/                # Sass 開発環境
+│       ├── style.scss       # 各SCSSモジュールを統合するメインSCSS
+│       ├── _common.scss     # 変数（カラー、流体フォント設定）、共通パーツ
+│       ├── _header.scss     # ヘッダー・ナビゲーション・ドロワー
+│       ├── _footer.scss     # フッター・全画面共通CVエリア
+│       ├── _top.scss        # トップページ専用スタイル
+│       ├── _about.scss      # 企業情報ページ専用スタイル
+│       ├── _design.scss     # 実績・制作物一覧専用スタイル
+│       ├── _locations.scss  # ロケーションページ専用スタイル
+│       └── _contact.scss    # お問い合わせページ（Snow Monkey Form連動用）
+│
+├── functions.php            # テーマ設定、各種アセットのフック読み込み・最適化
+├── header.php               # サイト共通ヘッダー（セマンティックなナビゲーションマークアップ）
+├── footer.php               # サイト共通フッター（および全ページ共通CVエリアの統合）
+├── index.php                # メインインデックス（フォールバック用）
+├── page-about.php           # 固定ページテンプレート：OUR COMPANY
+├── page-app-design.php       # 固定ページテンプレート：APP DESIGN（実績ページ）
+├── style.css                # WordPressテーマ定義用スタイルシート
+├── package-lock.json        # 依存ライブラリのバージョンロック
+└── package.json             # ローカル開発用パッケージ（sass, browser-sync等）の定義
 ```
 
-### Available CLI commands
+### 使用技術・環境
+言語・マークアップ: PHP 8.x / HTML5 / SCSS (Sass Modules対応) / Vanilla JS (ES6+)
 
-`_s` comes packed with CLI commands tailored for WordPress theme development :
+プラットフォーム: WordPress 6.x (完全独自カスタムテーマ)
 
-- `composer lint:wpcs` : checks all PHP files against [PHP Coding Standards](https://developer.wordpress.org/coding-standards/wordpress-coding-standards/php/).
-- `composer lint:php` : checks all PHP files for syntax errors.
-- `composer make-pot` : generates a .pot file in the `languages/` directory.
-- `npm run compile:css` : compiles SASS files to css.
-- `npm run compile:rtl` : generates an RTL stylesheet.
-- `npm run watch` : watches all SASS files and recompiles them to css when they change.
-- `npm run lint:scss` : checks all SASS files against [CSS Coding Standards](https://developer.wordpress.org/coding-standards/wordpress-coding-standards/css/).
-- `npm run lint:js` : checks all JavaScript files against [JavaScript Coding Standards](https://developer.wordpress.org/coding-standards/wordpress-coding-standards/javascript/).
-- `npm run bundle` : generates a .zip archive for distribution, excluding development and system files.
+ローカル開発環境・ツール: sass / browser-sync / concurrently (ローカル同期・高速コンパイル環境)
 
-Now you're ready to go! The next step is easy to say, but harder to do: make an awesome WordPress theme. :)
+### こだわった技術的アプローチ
+**1. テンプレート階層の厳格な準拠とコンポーネントのモジュール化**
 
-Good luck!
+WordPressの標準機能であるテンプレート階層（page-{slug}.php）を厳格に適用し、各固定ページ固有のロジックを分離。また、header.php と footer.php にサイト共通コンポーネント（全画面共通のCVエリアを含む）を高度に共通化しました。これにより、マークアップの二重管理を完全に防ぎ、デザインや文言の変更時に一箇所を修正すれば全画面に即座に反映される実務的な設計を実現しています。
+
+**2. filemtime() を活用したブラウザネイティブなキャッシュバスター環境**
+
+実務のサイト運用において、CSSを変更した際に「クライアントやエンドユーザーのブラウザに古いキャッシュが残り、デザインが崩れる」というトラブルは頻発します。本プロジェクトでは、functions.php 内で wp_enqueue_style を用いてスタイルを読み込む際、PHPの filemtime() 関数を組み込みました。
+ファイルの最終更新日時（タイムスタンプ）をクエリパラメータとして動的に自動生成・付与することで、手動でバージョンを書き換える手間を排除し、安全かつ確実に最新のスタイルシートをブラウザへ適用させるデプロイ環境を構築しました。
+
+**3. @use 規則に準拠した Sass モジュール設計（関心の分離）**
+
+従来のグローバルな @import によるスタイルの衝突や意図しない上書きリスクを避けるため、モダンな Sass Modules（@use）を全面採用しました。
+カラーコードや流体フォントサイズは _common.scss に集約して一元管理し、画面やパーツ（_header.scss, _about.scss 等）ごとにファイルを完全にカプセル化。カプセル化された名前空間内で安全に変数を呼び出すことで、複数人開発や将来的なページ増設時にもクラス名の衝突が起きない、予測可能性と保守性の極めて高いCSS設計を行っています。
+
+**4. Vanilla JS によるドロワーメニューの軽量化とメモリ最適化**
+
+ハンバーガーメニューなどのUI制御において、jQueryなどの外部ライブラリに一切依存せず、ピュアな JavaScript（Vanilla JS）のみで軽量に構築しました。
+DOMContentLoaded イベントを起点とし、トグルボタンのクリック時にクラス（.open）を付与するシンプルな実装を採用。さらに、ドロワー開閉時のバブリングを e.stopPropagation() で的確にハンドリングし、画面外（オーバーレイ部分）をクリックした際にも自動で閉じる直感的なUXを最小限のコード量で実装しました。
+
+**5. 流体フォントサイズ（vw）と picture 要素によるシームレスなレスポンシブデザイン**
+
+レスポンシブWebデザインにおいて、デバイスの境界でデザインがガタつくのを防ぐため、フォントサイズやマージンに vw（Viewport Width）を用いた流体設計を導入しました。これにより、ブレイクポイント間でも画面幅に比例して要素が美しく拡大縮小します。
+また、デバイスごとの画像切り替え（モバイル/タブレット/デスクトップ）は JavaScript による制御ではなく、HTML5の <picture> および <source media="..."> 要素を用いてブラウザにネイティブ処理させました。これによりJavaScriptの計算コストを完全に排除し、Core Web Vitals（Webパフォーマンス）を意識したフロントエンド実装を徹底しています。
+
+**6. 実務プラグイン（Snow Monkey Form）のスタイルプリセット対応**
+
+お問い合わせページ（_contact.scss）の実装では、WordPressの実務で広く採用されているブロックエディタ対応フォームプラグイン Snow Monkey Form の出力クラス（.snow-monkey-form, .smf-item, .smf-error-messages など）を想定し、先回りでスタイルコーディングを行いました。
+プラグインが生成するネイティブなDOM構造やエラーメッセージの絶対配置（position: absolute）に対応した設計にすることで、デザイン崩れを防ぎ、運用者が管理画面から直感的にフォームを変更・運用できる体制を整えています。
+
+### 今後の拡張計画
+**カスタムテンプレートパーツ（get_template_part）のさらなる切り出し**:
+現在各固定ページ内に記述されている下部ナビゲーションエリア（projects wrap セクション）などを、template-parts/ ディレクトリへコンポーネントとして完全に切り出し、テンプレート側の記述量をさらに1/3に削減・効率化します。
+
+**画像パス出力用のカスタムヘルパー関数の導入**:
+各テンプレート内に存在する <?php echo get_template_directory_uri(); ?>/assets/images/... の記述を、独自のショートハンド関数（例: get_theme_img_url()）化し、HTMLの可読性の向上とコーディング速度の最大化を図ります。
+
+### 制作者
+GitHub - @yama5504
