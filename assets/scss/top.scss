@@ -104,6 +104,36 @@ top
     }
 }
 
+@property --iris-size {
+  syntax: '<percentage>';
+  inherits: false;
+  initial-value: 0%;
+}
+
+.iris-out {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: #d7735e;
+  z-index: 9999;
+  pointer-events: none;
+  mask-image: radial-gradient(circle, transparent var(--iris-size), #000 calc(var(--iris-size) + 0.5%));
+  -webkit-mask-image: radial-gradient(circle, transparent var(--iris-size), #000 calc(var(--iris-size) + 0.5%));
+  animation: irisOpen 4s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+}
+
+@keyframes irisOpen {
+  0% {
+    --iris-size: 0%;
+  }
+  100% {
+    --iris-size: 150%;
+    visibility: hidden;
+  }
+}
+
 @media screen and (min-width:768px) {
     .top {
         .mv {
