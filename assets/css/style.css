@@ -1098,11 +1098,13 @@ top
   text-align: center;
 }
 
+/*
 @property --iris-size {
-  syntax: "<percentage>";
+  syntax: '<percentage>';
   inherits: false;
   initial-value: 0%;
 }
+
 .iris-out {
   position: fixed;
   top: 0;
@@ -1126,6 +1128,7 @@ top
     visibility: hidden;
   }
 }
+*/
 @media screen and (min-width: 768px) {
   .top .mv {
     margin: 0 5.21vw;
