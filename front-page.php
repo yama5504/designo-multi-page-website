@@ -54,6 +54,20 @@
     </section>
 </main>
 
-<div class="iris-out"></div>
+<!-- ローディング画面 -->
+<div class="loading_area">
+    <div class="loading_img">
+        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/shared/desktop/logo-dark.png" alt="">
+    </div>
+    <svg viewBox="0 0 100 100" preserveAspectRatio="xMidYMid slice">
+        <defs>
+            <mask id="hole-mask">
+                <rect width="100" height="100" fill="#fff" />
+                <circle class="hole" cx="50" cy="50" r="5" fill="black" />
+            </mask>
+        </defs>
+        <rect width="100" height="100" fill="#f2f2f2" mask="url(#hole-mask)" />
+    </svg>
+</div>
 
 <?php get_footer(); ?>
