@@ -55,7 +55,7 @@
 </main>
 
 <!-- ローディング画面 -->
-<!-- <div class="loading_area">
+<div class="loading_area">
     <div class="loading_img">
         <img src="<?php echo get_template_directory_uri(); ?>/assets/images/shared/desktop/logo-dark.png" alt="">
     </div>
@@ -68,6 +68,6 @@
         </defs>
         <rect width="100" height="100" fill="#f2f2f2" mask="url(#hole-mask)" />
     </svg>
-</div> -->
+</div>
 
 <?php get_footer(); ?>

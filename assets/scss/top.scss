@@ -124,7 +124,6 @@ top
         transform-origin: center; 
         
         &.active {
-            /* rプロパティではなくtransformを高速化 */
             animation: loading_hole 1.3s ease-in-out forwards;
             will-change: transform; 
         }
@@ -133,11 +132,9 @@ top
 
 @keyframes loading_hole {
     0% { 
-        /* translateZ(0) も含めてGPUアクセラレーションを有効化 */
         transform: scale(0) translateZ(0);
     }
     100% {
-        /* 画面全体を覆い切るよう十分な倍率を指定 */
         transform: scale(60) translateZ(0);
     }
 }
