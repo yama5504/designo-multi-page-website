@@ -59,15 +59,15 @@
     <div class="loading_img">
         <img src="<?php echo get_template_directory_uri(); ?>/assets/images/shared/desktop/logo-dark.png" alt="">
     </div>
-    <svg viewBox="0 0 100 100" preserveAspectRatio="none">
-    <defs>
-        <mask id="hole-mask">
-            <rect x="-50%" y="-50%" width="200%" height="200%" fill="#fff" />
-            <circle class="hole" cx="50%" cy="50%" r="50" fill="#000" />
-        </mask>
-    </defs>
-    <rect x="-50%" y="-50%" width="200%" height="200%" fill="#f2f2f2" mask="url(#hole-mask)" />
-</svg>
+    <svg viewBox="0 0 100 100" preserveAspectRatio="xMidYMid slice">
+        <defs>
+            <mask id="hole-mask">
+                <rect width="100%" height="100%" fill="#fff" />
+                <circle class="hole" cx="50%" cy="50%" r="50" fill="#000" />
+            </mask>
+        </defs>
+        <rect width="100" height="100" fill="#f2f2f2" mask="url(#hole-mask)" />
+    </svg>
 </div>
 
 <?php get_footer(); ?>
