@@ -62,8 +62,8 @@
     <svg viewBox="0 0 100 100" preserveAspectRatio="xMidYMid slice">
         <defs>
             <mask id="hole-mask">
-                <rect width="100" height="100" fill="#fff" />
-                <circle class="hole" cx="50" cy="50" r="5" fill="black" />
+                <rect width="100%" height="100%" fill="#fff" />
+                <circle class="hole" cx="50%" cy="50%" r="50" fill="#000" />
             </mask>
         </defs>
         <rect width="100" height="100" fill="#f2f2f2" mask="url(#hole-mask)" />
