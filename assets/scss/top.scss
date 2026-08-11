@@ -109,6 +109,7 @@ top
     inset: -100px 0;
     pointer-events: none;
     z-index: 9999;
+    background: linear-gradient(to top, #fff 0px, #fff 100px, transparent 100px);
 
     &.is-loaded {
         display: none;
