@@ -70,6 +70,4 @@
     </svg>
 </div>
 
-<div class="sp-bottom"></div>
-
 <?php get_footer(); ?>

@@ -109,22 +109,21 @@ top
     inset: 0;
     pointer-events: none;
     z-index: 9999;
-    background-color: transparent; 
     
-    // &::after {
-    //     content: '';
-    //     position: absolute;
-    //     left: 0;
-    //     right: 0;
-    //     bottom: 0;
-    //     height: 100px; 
-    //     background-color: #f2f2f2; 
-    //     z-index: 1;
-    // }
-
-    &.is-loaded {
-        display: none;
+    &::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        height: 50px; 
+        background-color: #f2f2f2; 
+        z-index: 1;
     }
+
+    // &.is-loaded {
+    //     display: none;
+    // }
 
     svg {
         width: 100%;
@@ -132,12 +131,12 @@ top
     }
 
     .hole {
-        transform-origin: center; 
         transform: scale(0);
+        will-change: transform;
+        transform-origin: center; 
         
         &.active {
-            animation: loading_hole 1.5s ease-in-out forwards;
-            will-change: transform; 
+            animation: loading_hole 1.5s ease-in-out forwards; 
         }
     }
 }
@@ -147,7 +146,7 @@ top
         transform: scale(0) translateZ(0);
     }
     100% {
-        transform: scale(60) translateZ(0);
+        transform: scale(20) translateZ(0);
     }
 }
 
@@ -187,14 +186,6 @@ top
     100% {
         opacity: 0;
     }
-}
-
-.sp-bottom {
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    height: 1px;
-    background-color: #fff;
 }
 
 @media screen and (min-width:768px) {
