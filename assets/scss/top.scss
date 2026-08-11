@@ -106,14 +106,13 @@ top
 
 .loading_area {
     position: fixed;
-    inset: 0;
+    // inset: 0;
     pointer-events: none;
     z-index: 9999;
-    background-color: #fff;
-
-    &.active {
-        animation: loading_bg 1.3s ease-in-out forwards;
-    }
+    top: calc(-1 * env(safe-area-inset-top, 0px));
+    bottom: calc(-1 * env(safe-area-inset-bottom, 0px));
+    left: 0;
+    right: 0;
 
     &.is-loaded {
         display: none;
@@ -132,15 +131,6 @@ top
             animation: loading_hole 1.5s ease-in-out forwards;
             will-change: transform; 
         }
-    }
-}
-
-@keyframes loading_bg {
-    0% {
-        background-color: #fff;
-    }
-    100% {
-        background-color: transparent;
     }
 }
 
