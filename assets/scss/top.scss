@@ -106,10 +106,25 @@ top
 
 .loading_area {
     position: fixed;
-    inset: -100px 0;
+    inset: 0;
     pointer-events: none;
     z-index: 9999;
-    background-color: #fff;
+    background-color: transparent; 
+    
+    &::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        /* 画面内にはわずか 1px だけ置く（穴が開いた時の邪魔にならないようにする） */
+        height: 1px; 
+        /* 単色（background-color）にすることでツールバー裏へ自動拡張させる */
+        background-color: #f2f2f2; 
+        /* Safe Area（ツールバー裏の余白）の分だけ下方向に高さを持たせる */
+        padding-bottom: max(100px, env(safe-area-inset-bottom));
+        z-index: 1;
+    }
 
     &.is-loaded {
         display: none;
@@ -356,6 +371,12 @@ top
                     }
                 }
             }
+        }
+    }
+
+    .loading_area {
+        &::after {
+            display: none;
         }
     }
 }
