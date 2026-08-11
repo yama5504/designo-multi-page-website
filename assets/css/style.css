@@ -1115,7 +1115,7 @@ top
   opacity: 1;
 }
 .loading_area.active::before {
-  animation: fade_bg 1s ease-in-out forwards;
+  animation: fade_bg 0.5s ease-in-out forwards;
 }
 .loading_area.is-loaded {
   display: none;
