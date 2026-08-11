@@ -1107,16 +1107,6 @@ top
   z-index: 9999;
   background-color: transparent;
 }
-.loading_area::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  height: 100px;
-  background-color: #f2f2f2;
-  z-index: 1;
-}
 .loading_area.is-loaded {
   display: none;
 }
@@ -1174,6 +1164,14 @@ top
     opacity: 0;
   }
 }
+.sp-bottom {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 1px;
+  background-color: #fff;
+}
+
 @media screen and (min-width: 768px) {
   .top .mv {
     margin: 0 5.21vw;
