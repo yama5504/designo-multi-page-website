@@ -1112,9 +1112,12 @@ top
   left: 0;
   right: 0;
   bottom: 0;
-  height: 50px;
+  height: 10px;
   background-color: #f2f2f2;
   z-index: 1;
+}
+.loading_area.is-loaded::after {
+  display: none;
 }
 .loading_area svg {
   width: 100%;

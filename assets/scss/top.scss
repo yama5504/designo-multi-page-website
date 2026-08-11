@@ -116,14 +116,17 @@ top
         left: 0;
         right: 0;
         bottom: 0;
-        height: 50px; 
+        height: 10px; 
         background-color: #f2f2f2; 
         z-index: 1;
     }
 
-    // &.is-loaded {
-    //     display: none;
-    // }
+    &.is-loaded {
+        //display: none;
+        &::after {
+            display: none;
+        }
+    }
 
     svg {
         width: 100%;
