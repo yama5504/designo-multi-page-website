@@ -110,6 +110,19 @@ top
     pointer-events: none;
     z-index: 9999;
 
+    &::before {
+        content: '';
+        position: absolute;
+        inset: -100px 0;
+        background-color: #fff;
+        z-index: -1;
+        opacity: 1;
+    }
+
+    &.active::before {
+        animation: fade_bg 1.5s ease-in-out forwards;
+    }
+
     &.is-loaded {
         display: none;
     }
@@ -122,12 +135,20 @@ top
     .hole {
         transform-origin: center; 
         transform: scale(0);
-        background-color: #fff;
         
         &.active {
             animation: loading_hole 1.5s ease-in-out forwards;
             will-change: transform; 
         }
+    }
+}
+
+@keyframes fade_bg {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
     }
 }
 
