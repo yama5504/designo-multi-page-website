@@ -1102,12 +1102,9 @@ top
 
 .loading_area {
   position: fixed;
+  inset: 0;
   pointer-events: none;
   z-index: 9999;
-  top: calc(-1 * env(safe-area-inset-top, 0px));
-  bottom: calc(-1 * env(safe-area-inset-bottom, 0px));
-  left: 0;
-  right: 0;
 }
 .loading_area.is-loaded {
   display: none;
@@ -1119,6 +1116,7 @@ top
 .loading_area .hole {
   transform-origin: center;
   transform: scale(0);
+  background-color: #fff;
 }
 .loading_area .hole.active {
   animation: loading_hole 1.5s ease-in-out forwards;
