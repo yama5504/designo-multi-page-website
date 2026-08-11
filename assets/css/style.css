@@ -1105,7 +1105,7 @@ top
   inset: 0;
   pointer-events: none;
   z-index: 9999;
-  background-color: #fff;
+  background-color: transparent;
 }
 .loading_area.is-loaded {
   display: none;
