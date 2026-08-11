@@ -34,6 +34,7 @@ document.addEventListener('DOMContentLoaded', () => {
         // 03. 3.3秒後に背景の穴を開ける
         setTimeout(() => {
             loadingHole.classList.add('active');
+            loadingArea.classList.add('active');
         }, 3300);
 
         // 04. 4.8秒後にローディング画面を消去（裏のコンテンツをクリック可能にする）

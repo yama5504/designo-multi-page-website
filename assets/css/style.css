@@ -1103,10 +1103,12 @@ top
 .loading_area {
   position: fixed;
   inset: 0;
-  width: 100vw;
-  height: 100dvh;
   pointer-events: none;
   z-index: 9999;
+  background-color: #fff;
+}
+.loading_area.active {
+  animation: loading_bg 1.3s ease-in-out forwards;
 }
 .loading_area.is-loaded {
   display: none;
@@ -1124,6 +1126,14 @@ top
   will-change: transform;
 }
 
+@keyframes loading_bg {
+  0% {
+    background-color: #fff;
+  }
+  100% {
+    background-color: transparent;
+  }
+}
 @keyframes loading_hole {
   0% {
     transform: scale(0) translateZ(0);
