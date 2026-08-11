@@ -120,7 +120,7 @@ top
     }
 
     &.active::before {
-        animation: fade_bg 0.5s ease-in-out forwards;
+        animation: fade_bg 1.5s ease-in forwards;
     }
 
     &.is-loaded {
@@ -137,7 +137,7 @@ top
         transform: scale(0);
         
         &.active {
-            animation: loading_hole 1.5s ease-in-out forwards;
+            animation: loading_hole 1.5s ease-in forwards;
             will-change: transform; 
         }
     }
@@ -182,12 +182,10 @@ top
 }
 
 @keyframes loading1 {
-    0% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
-    }
+    0% { opacity: 1; }
+    50% { opacity: 1; }
+    70% { opacity: 0; }
+    100% { opacity: 0; }
 }
 
 @keyframes loading2 {
