@@ -54,11 +54,13 @@ common
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 96px;
+  background-color: #fff;
 }
 
 body {
   font-family: "Jost", sans-serif;
   line-height: 1;
+  background-color: #fff;
 }
 
 main {
@@ -1112,20 +1114,20 @@ top
   height: 100%;
 }
 .loading_area .hole {
-  r: 0;
+  transform-origin: center;
+  transform: scale(0);
 }
 .loading_area .hole.active {
-  animation: loading_hole 1.3s ease-in-out forwards;
-  transform: translateZ(0);
-  will-change: r;
+  animation: loading_hole 1.5s ease-in-out forwards;
+  will-change: transform;
 }
 
 @keyframes loading_hole {
   0% {
-    r: 0;
+    transform: scale(0) translateZ(0);
   }
   100% {
-    r: 150;
+    transform: scale(60) translateZ(0);
   }
 }
 .loading_img {

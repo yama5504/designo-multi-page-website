@@ -108,7 +108,7 @@ top
     position: fixed;
     inset: 0;
     pointer-events: none;
-    z-index: 999;
+    z-index: 9999;
 
     &.is-loaded {
         display: none;
@@ -120,11 +120,11 @@ top
     }
 
     .hole {
-        /* 変形の基準点を円の中心（SVG全体の中心）に設定 */
         transform-origin: center; 
+        transform: scale(0);
         
         &.active {
-            animation: loading_hole 1.3s ease-in-out forwards;
+            animation: loading_hole 1.5s ease-in-out forwards;
             will-change: transform; 
         }
     }
