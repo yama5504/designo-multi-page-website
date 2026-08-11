@@ -1137,6 +1137,12 @@ top
   0% {
     opacity: 1;
   }
+  50% {
+    opacity: 1;
+  }
+  70% {
+    opacity: 0;
+  }
   100% {
     opacity: 0;
   }
@@ -1168,16 +1174,10 @@ top
 
 @keyframes loading1 {
   0% {
-    opacity: 1;
-  }
-  50% {
-    opacity: 1;
-  }
-  70% {
     opacity: 0;
   }
   100% {
-    opacity: 0;
+    opacity: 1;
   }
 }
 @keyframes loading2 {

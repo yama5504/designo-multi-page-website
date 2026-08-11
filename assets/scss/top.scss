@@ -144,12 +144,10 @@ top
 }
 
 @keyframes fade_bg {
-    0% {
-        opacity: 1;
-    }
-    100% {
-        opacity: 0;
-    }
+    0% { opacity: 1; }
+    50% { opacity: 1; }
+    70% { opacity: 0; }
+    100% { opacity: 0; }
 }
 
 @keyframes loading_hole {
@@ -182,10 +180,12 @@ top
 }
 
 @keyframes loading1 {
-    0% { opacity: 1; }
-    50% { opacity: 1; }
-    70% { opacity: 0; }
-    100% { opacity: 0; }
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
 }
 
 @keyframes loading2 {
