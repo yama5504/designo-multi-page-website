@@ -1103,9 +1103,10 @@ top
 .loading_area {
   position: fixed;
   inset: 0;
+  width: 100vw;
+  height: 100dvh;
   pointer-events: none;
   z-index: 9999;
-  background-color: transparent;
 }
 .loading_area.is-loaded {
   display: none;
