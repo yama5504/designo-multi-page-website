@@ -1129,7 +1129,7 @@ top
   transform-origin: center;
 }
 .loading_area .hole.active {
-  animation: loading_hole 1.5s ease-in-out forwards;
+  animation: loading_hole 1.3s ease-in-out forwards;
 }
 
 @keyframes loading_hole {

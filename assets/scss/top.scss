@@ -122,7 +122,6 @@ top
     }
 
     &.is-loaded {
-        //display: none;
         &::after {
             display: none;
         }
@@ -139,7 +138,7 @@ top
         transform-origin: center; 
         
         &.active {
-            animation: loading_hole 1.5s ease-in-out forwards; 
+            animation: loading_hole 1.3s ease-in-out forwards; 
         }
     }
 }

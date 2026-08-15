@@ -36,7 +36,7 @@ document.addEventListener('DOMContentLoaded', () => {
             loadingHole.classList.add('active');
         }, 3300);
 
-        // 04. 4.8秒後にローディング画面を消去（裏のコンテンツをクリック可能にする）
+        // 04. 3.3秒後にローディング画面を消去（裏のコンテンツをクリック可能にする）
         setTimeout(() => {
             loadingArea.classList.add('is-loaded');
         }, 3300);
